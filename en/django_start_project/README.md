@@ -22,13 +22,13 @@ In your Mac OS X or Linux console, you should run the following command. **Don't
 
 {% filename %}command-line{% endfilename %}
 ```
-(myvenv) ~/djangogirls$ django-admin startproject mysite .
+(myvenv) ~/django-tutorial$ django-admin startproject mysite .
 ```
 
 > The period `.` is crucial because it tells the script to install Django in your current directory (for which the period `.` is a short-hand reference).
 
 > **Note** When typing the command above, remember that you only type the part which starts by `django-admin`.
-The `(myvenv) ~/djangogirls$` part shown here is just example of the prompt that will be inviting your input on your command line.
+The `(myvenv) ~/django-tutorial$` part shown here is just example of the prompt that will be inviting your input on your command line.
 
 <!--endsec-->
 
@@ -38,19 +38,19 @@ On Windows you should run the following command. **(Don't forget to add the peri
 
 {% filename %}command-line{% endfilename %}
 ```
-(myvenv) C:\Users\Name\djangogirls> django-admin.exe startproject mysite .
+(myvenv) C:\Users\Name\django-tutorial> django-admin.exe startproject mysite .
 ```
 > The period `.` is crucial because it tells the script to install Django in your current directory (for which the period `.` is a short-hand reference).
 
 > **Note** When typing the command above, remember that you only type the part which starts by `django-admin.exe`.
-The `(myvenv) C:\Users\Name\djangogirls>` part shown here is just example of the prompt that will be inviting your input on your command line.
+The `(myvenv) C:\Users\Name\django-tutorial>` part shown here is just example of the prompt that will be inviting your input on your command line.
 
 <!--endsec-->
 
 `django-admin.py` is a script that will create the directories and files for you. You should now have a directory structure which looks like this:
 
 ```
-djangogirls
+django-tutorial
 ├── manage.py
 ├── mysite
 │   ├── asgi.py
@@ -77,7 +77,7 @@ Let's ignore the other files for now as we won't change them. The only thing to 
 
 Let's make some changes in `mysite/settings.py`. Open the file using the code editor you installed earlier.
 
-**Note**: Keep in mind that `settings.py` is a regular file, like any other. You can open it from inside the code editor, using the "file -> open" menu actions. This should get you the usual window in which you can navigate to your `settings.py` file and select it. Alternatively, you can open the file by navigating to the djangogirls folder on your desktop and right-clicking on it. Then, select your code editor from the list. Selecting the editor is important as you might have other programs installed that can open the file but will not let you edit it.
+**Note**: Keep in mind that `settings.py` is a regular file, like any other. You can open it from inside the code editor, using the "file -> open" menu actions. This should get you the usual window in which you can navigate to your `settings.py` file and select it. Alternatively, you can open the file by navigating to the django-tutorial folder on your desktop and right-clicking on it. Then, select your code editor from the list. Selecting the editor is important as you might have other programs installed that can open the file but will not let you edit it.
 
 It would be nice to have the correct time on our website. Go to [Wikipedia's list of time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) and copy your relevant time zone (TZ) (e.g. `Europe/Berlin`).
 
@@ -173,11 +173,11 @@ DATABASES = {
 }
 ```
 
-To create a database for our blog, let's run the following in the console: `python manage.py migrate` (we need to be in the `djangogirls` directory that contains the `manage.py` file). If that goes well, you should see something like this:
+To create a database for our blog, let's run the following in the console: `python manage.py migrate` (we need to be in the `django-tutorial` directory that contains the `manage.py` file). If that goes well, you should see something like this:
 
 {% filename %}command-line{% endfilename %}
 ```
-(myvenv) ~/djangogirls$ python manage.py migrate
+(myvenv) ~/django-tutorial$ python manage.py migrate
 Operations to perform:
   Apply all migrations: admin, auth, contenttypes, sessions
 Running migrations:
@@ -205,18 +205,18 @@ And we're done! Time to start the web server and see if our website is working!
 
 ## Starting the web server
 
-You need to be in the directory that contains the `manage.py` file (the `djangogirls` directory). In the console, we can start the web server by running `python manage.py runserver`:
+You need to be in the directory that contains the `manage.py` file (the `django-tutorial` directory). In the console, we can start the web server by running `python manage.py runserver`:
 
 {% filename %}command-line{% endfilename %}
 ```
-(myvenv) ~/djangogirls$ python manage.py runserver
+(myvenv) ~/django-tutorial$ python manage.py runserver
 ```
 
 If you are on a Chromebook, use this command instead:
 
 {% filename %}Cloud 9{% endfilename %}
 ```
-(myvenv) ~/djangogirls$ python manage.py runserver 0.0.0.0:8080
+(myvenv) ~/django-tutorial$ python manage.py runserver 0.0.0.0:8080
 ```
 or this one if you are using Glitch:
 
@@ -230,7 +230,7 @@ If you are on Windows and this fails with `UnicodeDecodeError`, use this command
 
 {% filename %}command-line{% endfilename %}
 ```
-(myvenv) ~/djangogirls$ python manage.py runserver 0:8000
+(myvenv) ~/django-tutorial$ python manage.py runserver 0:8000
 ```
 
 

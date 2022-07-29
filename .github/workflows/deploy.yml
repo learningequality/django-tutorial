@@ -2,12 +2,12 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    if: github.repository == 'djangogirls/tutorial'
+    if: github.repository == 'learningequality/django-tutorial'
     steps:
       - name: Checkout
         uses: actions/checkout@v2

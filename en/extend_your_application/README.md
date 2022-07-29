@@ -85,7 +85,7 @@ OK, we've added a new URL pattern to `blog/urls.py`! Let's refresh the page: htt
   File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
   File "<frozen importlib._bootstrap_external>", line 850, in exec_module
   File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/Users/ola/djangogirls/blog/urls.py", line 6, in <module>
+  File "/Users/ola/django-tutorial/blog/urls.py", line 6, in <module>
     path('post/<int:pk>/', views.post_detail, name='post_detail'),
 AttributeError: module 'blog.views' has no attribute 'post_detail'
 ```
@@ -178,46 +178,18 @@ OK, we can refresh our page and see if `TemplateDoesNotExist` is gone now.
 Yay! It works!
 
 
-# Deploy time!
+# Share time!
 
-It'd be good to see if your website still works on PythonAnywhere, right? Let's try deploying again.
+Let's update our repository with the new features we have implemented.
 
 {% filename %}command-line{% endfilename %}
 ```
 $ git status
+$ git checkout -b post-details
 $ git add .
 $ git status
 $ git commit -m "Added view and template for detailed blog post as well as CSS for the site."
 $ git push
 ```
 
-Then, in a [PythonAnywhere Bash console](https://www.pythonanywhere.com/consoles/):
-
-{% filename %}PythonAnywhere command-line{% endfilename %}
-```
-$ cd ~/<your-pythonanywhere-domain>.pythonanywhere.com
-$ git pull
-[...]
-```
-
-(Remember to substitute `<your-pythonanywhere-domain>` with your actual PythonAnywhere subdomain, without the angle-brackets.)
-
-
-## Updating the static files on the server
-
-Servers like PythonAnywhere like to treat "static files" (like CSS files) differently from Python files, because they can optimise for them to be loaded faster.  As a result, whenever we make changes to our CSS files, we need to run an extra command on the server to tell it to update them.  The command is called `collectstatic`.
-
-Start by activating your virtualenv if it's not still active from earlier (PythonAnywhere uses a command called `workon` to do this, it's just like the `source myenv/bin/activate` command you use on your own computer):
-
-{% filename %}PythonAnywhere command-line{% endfilename %}
-```
-$ workon <your-pythonanywhere-domain>.pythonanywhere.com
-(ola.pythonanywhere.com)$ python manage.py collectstatic
-[...]
-```
-
-The `manage.py collectstatic` command is a bit like `manage.py migrate`.  We make some changes to our code, and then we tell Django to _apply_ those changes, either to the server's collection of static files, or to the database.
-
-In any case, we're now ready to hop on over to the ["Web" page](https://www.pythonanywhere.com/web_app_setup/) (from the menu button in the upper right of the console) and hit **Reload**, and then look at the https://subdomain.pythonanywhere.com page to see the result.
-
-And that should be it. Congrats! :)
+Now create a pull request, review, merge, update local etc.

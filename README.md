@@ -1,23 +1,23 @@
-# Django Girls Tutorial
+# Learning Equality Django Tutorial
 
-This is the source code repository for the Django Girls Tutorial. Django Girls Tutorial is used on [tutorial.djangogirls.org](http://tutorial.djangogirls.org) so if you want to read it, please go there. If you want to contribute please do go further with this file.
+This tutorial is based on the excellent Django Girls Tutorial found at [tutorial.djangogirls.org](http://tutorial.djangogirls.org). This is possible as it is licensed under a [*Creative Commons Attribution-ShareAlike 4.0*](https://creativecommons.org/licenses/by-sa/4.0/) license. Everyone is free to add, edit and correct the tutorial.
+
+If you want to contribute please do go further with this file.
 
 
 # How to contribute
 
-The Django Girls Tutorial is licensed under a [*Creative Commons Attribution-ShareAlike 4.0*](https://creativecommons.org/licenses/by-sa/4.0/) license. Everyone is free to add, edit and correct the tutorial.
+The Learning Equality Django Tutorial is licensed under a [*Creative Commons Attribution-ShareAlike 4.0*](https://creativecommons.org/licenses/by-sa/4.0/) license. Everyone is free to add, edit and correct the tutorial.
 
 # Editing basics
 
-The source code of the tutorial is [hosted on GitHub](https://github.com/DjangoGirls/tutorial). The GitHub [Fork & Pull workflow](https://help.github.com/articles/using-pull-requests) is used to accept and review changes.
+The source code of the tutorial is [hosted on GitHub](https://github.com/learningequality/django-tutorial). The GitHub [Fork & Pull workflow](https://help.github.com/articles/using-pull-requests) is used to accept and review changes.
 
 The tutorial uses the [HonKit](https://github.com/honkit/honkit) project for publishing its documentation. [See more information about how HonKit works](https://honkit.netlify.app/).
 
 The tutorial is written in [Markdown mark up language](https://help.github.com/articles/markdown-basics).
 
-You can find any discussions about the contents of the tutorial on the [GitHub issue tracker](https://github.com/DjangoGirls/tutorial/issues).
-
-[Crowdin](https://crowdin.com/project/django-girls-tutorial) platform is used to manage translations. If you want to join an existing translation team or launch a new translation, send an email to the [translation managers](mailto:translations@djangogirls.org) or contact [support team](mailto:hello@djangogirls.org). If you want to propose some small changes or fix typos in existing translations, please create a Pull Request.
+You can find any discussions about the contents of the tutorial on the [GitHub issue tracker](https://github.com/learningequality/django-tutorial/issues).
 
 # Getting started and prerequisites
 
@@ -28,7 +28,7 @@ For contributing to the tutorial the following is needed to get started:
 
 ## Fork the repository
 
-First fork the [DjangoGirls/tutorial](https://github.com/DjangoGirls/tutorial) repository to your personal GitHub account:
+First fork the [learningequality/django-tutorial](https://github.com/learningequality/django-tutorial) repository to your personal GitHub account:
 
 ![Fork button](contributing/images/fork.png)
 

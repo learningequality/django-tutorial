@@ -108,7 +108,7 @@ You can now have a little fun and try to customize your template! Here are a few
 - `<em>text</em>` emphasizes your text
 - `<strong>text</strong>` strongly emphasizes your text
 - `<br>` goes to another line (you can't put anything inside br and there's no closing tag)
-- `<a href="https://djangogirls.org">link</a>` creates a link
+- `<a href="https://learningequality.org">link</a>` creates a link
 - `<ul><li>first item</li><li>second item</li></ul>` makes a list, just like this one!
 - `<div></div>` defines a section of the page
 - `<nav></nav>` defines a set of navigation links
@@ -127,11 +127,11 @@ Here's an example of a full template, copy and paste it into `blog/templates/blo
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Django Girls blog</title>
+        <title>My blog</title>
     </head>
     <body>
         <header>
-            <h1><a href="/">Django Girls Blog</a></h1>
+            <h1><a href="/">My Blog</a></h1>
         </header>
 
         <article>
@@ -162,20 +162,20 @@ Yaaay! But so far, our template only ever displays exactly __the same informatio
 
 What we really want to do is display real posts added in our Django admin – and that's where we're going next.
 
-## One more thing:  deploy!
+## One more thing: share!
 
-It'd be good to see all this out and live on the Internet, right?  Let's do another PythonAnywhere deploy:
+It'd be good to see all this out and live on the Internet, right?  Let's push code to Github as a feature branch:
 
-### Commit, and push your code up to GitHub
+### Commit, and push your code to GitHub {#pull-request}
 
-First off, let's see what files have changed since we last deployed (run these commands locally, not on PythonAnywhere):
+First off, let's see what files have changed since we last pushed:
 
 {% filename %}command-line{% endfilename %}
 ```
 $ git status
 ```
 
-Make sure you're in the `djangogirls` directory and let's tell `git` to include all the changes in this directory:
+Make sure you're in the `django-tutorial` directory and let's tell `git` to include all the changes in this directory:
 
 {% filename %}command-line{% endfilename %}
 ```
@@ -188,6 +188,21 @@ Before we upload all the files, let's check what `git` will be uploading (all th
 ```
 $ git status
 ```
+
+We are making an update to our code - commonly for a repository that only you are contributing to, you might just push the code directly to the main branch, but more often you will be submitting code updates via pull requests. To do that, let's make a feature branch:
+
+```
+$ git checkout -b blog-feature
+```
+
+This tells git to check out and create a new branch called `blog-feature`. We could have done this in two steps:
+
+```
+$ git branch blog-feature
+$ git checkout blog-feature
+```
+
+Which would have the same effect. We are now on a feature branch, and ready to save the staged changes into the commit history on this new feature branch.
 
 We're almost there, now it's time to tell it to save this change in its history. We're going to give it a "commit message" where we describe what we've changed. You can type anything you'd like at this stage, but it's helpful to type something descriptive so that you can remember what you've done in the future.
 
@@ -205,22 +220,35 @@ Once we've done that, we upload (push) our changes up to GitHub:
 $ git push
 ```
 
-### Pull your new code down to PythonAnywhere, and reload your web app
+### Open a pull request on Github
 
-* Open up the [PythonAnywhere consoles page](https://www.pythonanywhere.com/consoles/) and go to your **Bash console** (or start a new one). Then, run:
+When you push a new branch to Github as we did above, it will show output with a URL that you can open that will quickly allow you to make a Pull Request against the default branch of the repository.
 
-{% filename %}PythonAnywhere command-line{% endfilename %}
+Open the link and create the pull request against your default `main` branch. For more detailed information on creating a pull request, see the [Github documentation](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
+For the title and description, give a short summary of the changes you are making with this update.
+
+When you have created the pull request, review your own code in the Github UI. You have been testing your code locally, so it is likely that it is working as intended, but there may be things you will notice in your code that you didn't see when using your IDE. Check for typos, incorrect logic, and make sure the changes you are making match up to what you think you are changing and the description you gave in the Pull Request.
+
+When you are satisfied, approve your Pull Request and merge it. It's also a good idea to delete the feature branch `blog-feature` when prompted to in the Github UI, to prevent your remote repository from becoming cluttered with feature branches.
+
+### Update your code locally
+
+Now that we have merged our Pull Request, we want to make sure our local version of the repository is up to date with the 'remote' - the version on Github. To do this, we change branch back to main:
+
 ```
-$ cd ~/<your-pythonanywhere-domain>.pythonanywhere.com
+$ git checkout main
+```
+
+And then pull from remote:
+
+```
 $ git pull
-[...]
 ```
 
-You'll need to substitute `<your-pythonanywhere-domain>` with your actual PythonAnywhere subdomain name, without the angle-brackets. Your subdomain name is normally your PythonAnywhere user name, but in some cases it might be a bit different (such as if your user name contains capital letters). So if this command doesn't work, use the `ls` (list files) command to find your actual subdomain/folder name, and then `cd` to there.
+This will update your local copy of the `main` branch with the latest changes. We can now remove the local copy of the feature branch too:
 
-Now watch your code get downloaded. If you want to check that it's arrived, you can hop over to the **"Files" page** and view your code on PythonAnywhere (you can reach other PythonAnywhere pages from the menu button on the console page).
+```
+$ git branch -d blog-feature
+```
 
-
-* Finally, hop on over to the ["Web" page](https://www.pythonanywhere.com/web_app_setup/) and hit **Reload** on your web app.
-
-Your update should be live! Go ahead and refresh your website in the browser. Changes should be visible. :)
+Because all commits from `blog-feature` are now part of `main`, git will happily delete this branch without any warning.

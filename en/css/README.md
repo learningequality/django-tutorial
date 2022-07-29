@@ -42,7 +42,7 @@ Django already knows where to find the static files for the built-in "admin" app
 We do that by creating a folder called `static` inside the blog app:
 
 ```
-djangogirls
+django-tutorial
 ├── blog
 │   ├── migrations
 │   ├── static
@@ -58,7 +58,7 @@ Django will automatically find any folders called "static" inside any of your ap
 Let's create a CSS file now, to add your own style to your web page. Create a new directory called `css` inside your `static` directory. Then create a new file called `blog.css` inside this `css` directory. Ready?
 
 ```
-djangogirls
+django-tutorial
 └─── blog
      └─── static
           └─── css

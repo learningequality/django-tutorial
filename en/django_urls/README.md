@@ -4,7 +4,7 @@ We're about to build our first webpage: a homepage for your blog! But first, let
 
 ## What is a URL?
 
-A URL is a web address. You can see a URL every time you visit a website – it is visible in your browser's address bar. (Yes! `127.0.0.1:8000` is a URL! And `https://djangogirls.org` is also a URL.)
+A URL is a web address. You can see a URL every time you visit a website – it is visible in your browser's address bar. (Yes! `127.0.0.1:8000` is a URL! And `https://learningequality.org` is also a URL.)
 
 ![URL](images/url.png)
 
@@ -103,7 +103,7 @@ If you try to visit http://127.0.0.1:8000/ now, then you'll find some sort of 'w
   File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
   File "<frozen importlib._bootstrap_external>", line 850, in exec_module
   File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/Users/ola/djangogirls/blog/urls.py", line 5, in <module>
+  File "/Users/ola/django-tutorial/blog/urls.py", line 5, in <module>
     path('', views.post_list, name='post_list'),
 AttributeError: module 'blog.views' has no attribute 'post_list'
 ```
