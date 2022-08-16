@@ -1,4 +1,12 @@
-We will be using pyenv to install and manage Python versions. Paste the following command into a new terminal window:
+First check to see if you already have `pyenv` installed by running this in a terminal window:
+
+```
+pyenv
+```
+
+If it is already installed, either update it using `pyenv update` or using the package manager that you used to install it.
+
+If it is not installed you can install it using the following command, pasted into a new terminal window:
 
 ```
 curl https://pyenv.run | bash

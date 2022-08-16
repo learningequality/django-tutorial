@@ -6,7 +6,9 @@
       "py_min_version": "3.6",
       "py_min_release": "3.6.8",
       "pa_py_version": "3.8",
-      "django_version": "3.2.13"
+      "django_version": "3.2.13",
+      "drf_version": "3.13.1",
+      "django_filter_version": "22.1"
     },
     "pdf": {
         "fontSize": 16

@@ -28,3 +28,5 @@
 * [Django templates](django_templates/README.md)
 * [Template extending](template_extending/README.md)
 * [Extend your application](extend_your_application/README.md)
+* [Django REST Framework basics](drf_basics/README.md)
+* [Django REST Framework filtering](drf_filtering/README.md)

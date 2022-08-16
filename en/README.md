@@ -4,21 +4,17 @@
 > To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/
 
 ## Welcome
-Welcome to the Learning Equality Django Tutorial! We are happy to see you here. :) In this tutorial, we will take you on a journey under the hood of web technologies, offering you a glimpse of all the bits and pieces that need to come together to make the web work as we know it.
-
-As with all unknown things, this is going to be an adventure - but no worries, since you already worked up the courage to be here, you'll be just fine. :)
-
-## Introduction
-
-Have you ever felt that the world is more and more about technology to which you cannot (yet) relate? Have you ever wondered how to create a website but have never had enough motivation to start? Have you ever thought that the software world is too complicated for you to even try doing something on your own?
-
-Well, we have good news for you! Programming is not as hard as it seems and we want to show you how fun it can be.
-
-This tutorial will not magically turn you into a programmer. If you want to be good at it, you need months or even years of learning and practice. But we want to show you that programming or creating websites is not as complicated as it seems. We will try to explain different bits and pieces as well as we can, so you will not feel intimidated by technology.
-
-We hope that we'll be able to make you love technology as much as we do!
+Welcome to the Learning Equality Django Tutorial! In this tutorial, we will take you through the fundamentals of the Django web framework, which is used by all of Learning Equality's platforms. This tutorial is based around Django { book.django_version }, but the code and core concepts are applicable to multiple versions of Django. Currently Learning Equality products use Django 1.11 (which is the last version of Django to support Python 2) and Django 3.2.
 
 ## What will you learn during the tutorial?
+
+The key skills you will have practiced by the end of this tutorial are:
+* Working with Python virtual environments
+* Working with Django apps to organize associated functionality and code
+* Using Django views to create HTML web pages
+* Using the Django Object Relational Model to represent, store, and query data in a database
+* Creating an API endpoint using Django REST Framework (DRF) to return additional data to the frontend
+* Writing tests for Django views and DRF endpoints to document and guarantee the behaviour of your app
 
 Once you've finished the tutorial, you will have a small working web application: your own blog.
 
