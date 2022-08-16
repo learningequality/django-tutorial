@@ -3,7 +3,7 @@
 <html lang="en" >
     <head>
         <meta charset="UTF-8">
-        <title>Code editor · HonKit</title>
+        <title>Django REST Framework basics · HonKit</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.7.5">
@@ -78,10 +78,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../python_introduction/" />
+    <link rel="next" href="../drf_filtering/" />
     
     
-    <link rel="prev" href="../python_installation/" />
+    <link rel="prev" href="../extend_your_application/" />
     
 
     </head>
@@ -272,9 +272,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6" data-path="./">
+        <li class="chapter " data-level="1.6" data-path="../code_editor/">
             
-                <a href="./">
+                <a href="../code_editor/">
             
                     
                     Code editor
@@ -480,9 +480,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.22" data-path="../drf_basics/">
+        <li class="chapter active" data-level="1.22" data-path="./">
             
-                <a href="../drf_basics/">
+                <a href="./">
             
                     
                     Django REST Framework basics
@@ -536,7 +536,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Code editor</a>
+        <a href=".." >Django REST Framework basics</a>
     </h1>
 </div>
 
@@ -551,33 +551,114 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="code-editor">Code editor</h1>
-<blockquote>
-<p>For readers at home: this chapter is covered in the <a href="https://www.youtube.com/watch?v=pVTaqzKZCdA&amp;t=4m43s" target="_blank">Installing Python &amp; Code Editor</a> video.</p>
+                                <h1 id="django-rest-framework-basics">Django REST Framework basics</h1>
+<p><a href="https://www.django-rest-framework.org/" target="_blank">Django REST Framework</a> is a framework for creating human and computer readable Django views for data - very often representations of Django models - as Web APIs. Broadly, it aims to help implement RESTful API endpoints, but it can be used to implement a wide range of different kinds of API endpoints.</p>
+<p>To get started, install Django REST Framework into your project.</p>
+<h2 id="django-rest-framework-installation">Django REST Framework installation</h2>
+<p>In your <code>django-tutorial/requirements.txt</code> file you should add the following text:</p>
+<p></p><p class="code-label">django-tutorial/requirements.txt</p><p></p>
+<pre><code>djangorestframework==3.13.1
+</code></pre><p>Now, run <code>pip install -r requirements.txt</code> to install Django REST Framework.</p>
+<p></p><p class="code-label">command-line</p><p></p>
+<pre><code>(myvenv) ~$ pip install -r requirements.txt
+Collecting djangorestframework==3.13.1 (from -r requirements.txt (line 1))
+  Downloading djangorestframework-3.13.1-py3-none-any.whl (7.9MB)
+Installing collected packages: djangorestframework
+Successfully installed djangorestframework-3.13.1
+</code></pre><blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p> In this tutorial we are using Django REST Framework version 3.13.1 - however, the last Django REST Framework version to support Python 2.7 was 3.9.1, this means that in Kolibri there may be some subtle differences. The tutorial will point out when these might arise.</p>
 </blockquote>
-<p>You&apos;re about to write your first line of code, so it&apos;s time to download a code editor!</p>
-<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
-<p> If you&apos;re using a Chromebook, skip this chapter and make sure you follow the <a href="../chromebook_setup/README.md">Chromebook Setup</a> instructions. The cloud IDE you chose (PaizaCloud Cloud IDE or AWS Cloud9) includes a code editor, and when you open a file in your IDE from the File menu, you will automatically be using the editor.</p>
-<p><strong>Note</strong> You might have done this earlier in the <a href="../installation/">Installation chapter</a> – if so, you can skip right ahead to the next chapter!</p>
-</blockquote>
-<p>There are a lot of different editors and it largely boils down to personal preference. Most Python programmers use complex but extremely powerful IDEs (Integrated Development Environments), such as VSCode and PyCharm.</p>
-<p>Our suggestions are below, all of which either have strong built in support for Python and Javascript programming, or have a rich library of extensions and plugins to support a wide range of functionality and features.</p>
-<h2 id="visual-studio-codevscodium">Visual Studio Code/VSCodium</h2>
-<p>Visual Studio Code is a source code editor developed by Microsoft for Windows, Linux and macOS. It includes support for debugging, embedded Git control, syntax highlighting, intelligent code completion, snippets, and code refactoring.</p>
-<p><a href="https://code.visualstudio.com/" target="_blank">Download it here</a></p>
-<p>Visual Studio Code is built around an open source core, but the released software is under a proprietary license. If you would prefer a free/libre version of Visual Studio Code, VSCodium releases a free build that contains no telemetry or tracking, and no proprietary software.</p>
-<p><a href="https://vscodium.com/" target="_blank">Download it here</a></p>
-<h2 id="pycharm">PyCharm</h2>
-<p>PyCharm is another popular editor. Its community edition is free, open-source and available for Windows, OS X and Linux. PyCharm is developed by <a href="https://www.jetbrains.com/" target="_blank">JetBrains</a>.</p>
-<p><a href="https://www.jetbrains.com/pycharm/download/" target="_blank">Download it here</a></p>
-<h2 id="sublime-text">Sublime Text</h2>
-<p>Sublime Text is a very popular editor with a free evaluation period and it&apos;s available for all operating systems.</p>
-<p><a href="https://www.sublimetext.com/" target="_blank">Download it here</a></p>
-<h2 id="why-are-we-installing-a-code-editor">Why are we installing a code editor?</h2>
-<p>You might be wondering why we are installing this special code editor software, rather than using something like Word or Notepad.</p>
-<p>The first reason is that code needs to be <strong>plain text</strong>, and the problem with programs like Word and Textedit is that they don&apos;t actually produce plain text, they produce rich text (with fonts and formatting), using custom formats like <a href="https://en.wikipedia.org/wiki/Rich_Text_Format" target="_blank">RTF (Rich Text Format)</a>.</p>
-<p>The second reason is that code editors are specialized for editing code, so they can provide helpful features like highlighting code with color according to its meaning, or automatically closing quotes for you.</p>
-<p>We&apos;ll see all this in action later. Soon, you&apos;ll come to think of your trusty old code editor as one of your favorite tools. :)</p>
+<p>We have seen how to extend Django using our own <code>blog</code> app - but we can also extend Django using installable libraries like Django REST Framework. To tell Django that we are using Django REST Framework in our project, we need to add the <code>rest_framework</code> app to our <code>INSTALLED_APPS</code> setting.</p>
+<p>We do that in the file <code>mysite/settings.py</code> -- open it in your code editor. We need to find <code>INSTALLED_APPS</code> and add a line containing <code>&apos;rest_framework&apos;,</code> just above <code>]</code>. So the final product should look like this:</p>
+<p></p><p class="code-label">mysite/settings.py</p><p></p>
+<pre><code class="lang-python">INSTALLED_APPS = [
+    <span class="hljs-string">&apos;django.contrib.admin&apos;</span>,
+    <span class="hljs-string">&apos;django.contrib.auth&apos;</span>,
+    <span class="hljs-string">&apos;django.contrib.contenttypes&apos;</span>,
+    <span class="hljs-string">&apos;django.contrib.sessions&apos;</span>,
+    <span class="hljs-string">&apos;django.contrib.messages&apos;</span>,
+    <span class="hljs-string">&apos;django.contrib.staticfiles&apos;</span>,
+    <span class="hljs-string">&apos;blog&apos;</span>,
+    <span class="hljs-string">&apos;rest_framework&apos;</span>,
+]
+</code></pre>
+<h2 id="building-an-api-for-blog-posts">Building an API for blog posts</h2>
+<p>We&apos;ve been displaying our posts in web pages, but if we want to make the data available to a Javascript driven frontend that dynamically loads the data, or as a public web API for other programs to access and pull posts from, we need to build an API that serves up the data from the post models.</p>
+<p>To do this, we can create a web API to return either lists of blog posts, or a single blog post at a time. In order to manage the two different views to provide this kind of response, Django REST Framework introduces a concept called a <code>ViewSet</code> - a Python class that then exposes multiple Django views, in the case we are concerned about, one to handle GET requests for a list of blog posts, and one to handle GET requests for a single blog post.</p>
+<p>Let&apos;s re-open up this file in our code editor to add a <code>ViewSet</code>:</p>
+<p></p><p class="code-label">blog/views.py</p><p></p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.shortcuts <span class="hljs-keyword">import</span> render
+<span class="hljs-keyword">from</span> django.utils <span class="hljs-keyword">import</span> timezone
+
+<span class="hljs-keyword">from</span> rest_framework <span class="hljs-keyword">import</span> permissions
+<span class="hljs-keyword">from</span> rest_framework <span class="hljs-keyword">import</span> viewsets
+
+<span class="hljs-keyword">from</span> .models <span class="hljs-keyword">import</span> Post
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">post_list</span>(<span class="hljs-params">request</span>):</span>
+    posts = Post.objects.<span class="hljs-built_in">filter</span>(published_date__lte=timezone.now()).order_by(<span class="hljs-string">&apos;published_date&apos;</span>)
+    <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">&apos;blog/post_list.html&apos;</span>, {<span class="hljs-string">&apos;posts&apos;</span>: posts})
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostViewSet</span>(<span class="hljs-params">viewsets.ModelViewSet</span>):</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    API endpoint that allows posts to be viewed or edited.
+    &quot;&quot;&quot;</span>
+    queryset = Post.objects.<span class="hljs-built_in">all</span>().order_by(<span class="hljs-string">&apos;published_date&apos;</span>)
+    permission_classes = [permissions.IsAuthenticated]
+</code></pre>
+<p>Let&apos;s look at the properties of the <code>PostViewSet</code> class. Firstly, it inherits from the <code>ModelViewSet</code> class which is setup to handle Django Models specifically. We tell it which model to use by setting the <code>queryset</code> property, which we have set to all of the <code>Post</code> objects, ordered by the published date.</p>
+<p>The <code>permission_classes</code> property, tells Django REST Framework who is allowed to access this web API. <code>permissions.isAuthenticated</code> is a standard Django REST Framework permission class that requires that the user be logged in - there are others that require the user to be an administrator, or you can create custom permission classes that do object level permission checks to make sure that you have permission to access the specific data.</p>
+<p>The only thing we haven&apos;t defined is what data from the <code>Post</code> objects we should be returning in the endpoint. To do this, Django REST Framework uses <code>Serializer</code> classes to define which data from objects are returned from the API. We can add a definition for a serializer into the file:</p>
+<p></p><p class="code-label">blog/views.py</p><p></p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.shortcuts <span class="hljs-keyword">import</span> render
+<span class="hljs-keyword">from</span> django.utils <span class="hljs-keyword">import</span> timezone
+
+<span class="hljs-keyword">from</span> rest_framework <span class="hljs-keyword">import</span> permissions
+<span class="hljs-keyword">from</span> rest_framework <span class="hljs-keyword">import</span> serializers
+<span class="hljs-keyword">from</span> rest_framework <span class="hljs-keyword">import</span> viewsets
+
+<span class="hljs-keyword">from</span> .models <span class="hljs-keyword">import</span> Post
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">post_list</span>(<span class="hljs-params">request</span>):</span>
+    posts = Post.objects.<span class="hljs-built_in">filter</span>(published_date__lte=timezone.now()).order_by(<span class="hljs-string">&apos;published_date&apos;</span>)
+    <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">&apos;blog/post_list.html&apos;</span>, {<span class="hljs-string">&apos;posts&apos;</span>: posts})
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostSerializer</span>(<span class="hljs-params">serializers.ModelSerializer</span>):</span>
+    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Meta</span>:</span>
+        model = Post
+        fields = [<span class="hljs-string">&apos;id&apos;</span>, <span class="hljs-string">&apos;author&apos;</span>, <span class="hljs-string">&apos;title&apos;</span>, <span class="hljs-string">&apos;text&apos;</span>, <span class="hljs-string">&apos;created_date&apos;</span>, <span class="hljs-string">&apos;published_date&apos;</span>]
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostViewSet</span>(<span class="hljs-params">viewsets.ModelViewSet</span>):</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    API endpoint that allows posts to be viewed or edited.
+    &quot;&quot;&quot;</span>
+    queryset = Post.objects.<span class="hljs-built_in">all</span>().order_by(<span class="hljs-string">&apos;published_date&apos;</span>)
+    permission_classes = [permissions.IsAuthenticated]
+    serializer_class = PostSerializer
+</code></pre>
+<p>Here we are using the Django REST Framework <code>ModelSerializer</code> which takes advantage of the fact that it is serializing a Django model to make some inferences about what data is being serialized. Because of this, we are able to use configuration with the <code>Meta</code> class, to define which Django model we are serializing, and which fields we should serialize. Note that we have included the <code>id</code> field, which we did not explicitly specify on the Django model, but which Django adds for us automatically. Django REST Framework will inspect the <code>Post</code> model and use a sensible default for serializing the data for each field.</p>
+<p>Now we have a complete <code>ViewSet</code> with a <code>Serializer</code> - but we are still not able to access this. To do that we have to map URLs to the views in the <code>ViewSet</code> much like we did for the Django views we defined earlier. Reopen the <code>blogs/urls.py</code> file and create a Django REST Framework <code>Router</code> to register the <code>ViewSet</code> against:</p>
+<p></p><p class="code-label"> blog/urls.py</p><p></p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> django.urls <span class="hljs-keyword">import</span> include
+<span class="hljs-keyword">from</span> django.urls <span class="hljs-keyword">import</span> path
+<span class="hljs-keyword">from</span> rest_framework <span class="hljs-keyword">import</span> routers
+
+<span class="hljs-keyword">from</span> . <span class="hljs-keyword">import</span> views
+
+router = routers.DefaultRouter()
+router.register(<span class="hljs-string">r&apos;post&apos;</span>, views.PostViewSet, basename=<span class="hljs-string">&quot;post-api&quot;</span>)
+
+
+urlpatterns = [
+    path(<span class="hljs-string">&apos;&apos;</span>, views.post_list, name=<span class="hljs-string">&apos;post_list&apos;</span>),
+    path(<span class="hljs-string">&apos;post/&lt;int:pk&gt;/&apos;</span>, views.post_detail, name=<span class="hljs-string">&apos;post_detail&apos;</span>),
+    path(<span class="hljs-string">&apos;api/&apos;</span>, include(router.urls)),
+]
+</code></pre>
+<p>This will mount URLs for the <code>PostViewSet</code> under <code>api/post</code> for retrieving a list of posts and <code>api/post/&lt;pk&gt;</code> for retrieving individual posts. Run the server and go to <a href="http://127.0.0.1:8000/api/post" target="_blank">http://127.0.0.1:8000/api/post</a> to view the browsable Django REST Framework API showing the posts.</p>
 
                                 
                                 </section>
@@ -605,12 +686,12 @@
 
             
                 
-                <a href="../python_installation/" class="navigation navigation-prev " aria-label="Previous page: Python installation">
+                <a href="../extend_your_application/" class="navigation navigation-prev " aria-label="Previous page: Extend your application">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../python_introduction/" class="navigation navigation-next " aria-label="Next page: Introduction to Python">
+                <a href="../drf_filtering/" class="navigation navigation-next " aria-label="Next page: Django REST Framework filtering">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -621,7 +702,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Code editor","level":"1.6","depth":1,"next":{"title":"Introduction to Python","level":"1.7","depth":1,"path":"python_introduction/README.md","ref":"python_introduction/README.md","articles":[]},"previous":{"title":"Python installation","level":"1.5","depth":1,"path":"python_installation/README.md","ref":"python_installation/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["heading-anchors@1.0.3","ga@1.0.1","richquotes@0.0.9","github@2.0.0","language-picker","codeblock-label","sectionx-ex","collapsible-menu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"collapsible-menu":{},"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/learningequality/django-tutorial"},"codeblock-label":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sectionx-ex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"default":false},"sectionx":{"tag":"b"},"heading-anchors":{},"highlight":{},"ga":{"configuration":"auto","token":"UA-51680040-3"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"py_version":"3.9","py_release":"3.9.9","py_min_version":"3.6","py_min_release":"3.6.8","pa_py_version":"3.8","django_version":"3.2.13","drf_version":"3.13.1","django_filter_version":"22.1"},"language":"en","gitbook":"*"},"file":{"path":"code_editor/README.md","mtime":"2022-08-16T16:58:15.528Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-08-16T16:58:36.596Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Django REST Framework basics","level":"1.22","depth":1,"next":{"title":"Django REST Framework filtering","level":"1.23","depth":1,"path":"drf_filtering/README.md","ref":"drf_filtering/README.md","articles":[]},"previous":{"title":"Extend your application","level":"1.21","depth":1,"path":"extend_your_application/README.md","ref":"extend_your_application/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["heading-anchors@1.0.3","ga@1.0.1","richquotes@0.0.9","github@2.0.0","language-picker","codeblock-label","sectionx-ex","collapsible-menu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"collapsible-menu":{},"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/learningequality/django-tutorial"},"codeblock-label":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sectionx-ex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"default":false},"sectionx":{"tag":"b"},"heading-anchors":{},"highlight":{},"ga":{"configuration":"auto","token":"UA-51680040-3"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"py_version":"3.9","py_release":"3.9.9","py_min_version":"3.6","py_min_release":"3.6.8","pa_py_version":"3.8","django_version":"3.2.13","drf_version":"3.13.1","django_filter_version":"22.1"},"language":"en","gitbook":"*"},"file":{"path":"drf_basics/README.md","mtime":"2022-08-16T16:58:15.536Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-08-16T16:58:36.596Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>

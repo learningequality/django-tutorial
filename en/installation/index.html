@@ -480,6 +480,32 @@
             
         </li>
     
+        <li class="chapter " data-level="1.22" data-path="../drf_basics/">
+            
+                <a href="../drf_basics/">
+            
+                    
+                    Django REST Framework basics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="../drf_filtering/">
+            
+                <a href="../drf_filtering/">
+            
+                    
+                    Django REST Framework filtering
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
 
@@ -578,7 +604,10 @@
 <pre><code>$ git config --global --add init.defaultBranch main
 </code></pre></div></div></div></sec>
 <h1 id="python">Install Python </h1>
-<p>We will be using pyenv to install and manage Python versions. Paste the following command into a new terminal window:</p>
+<p>First check to see if you already have <code>pyenv</code> installed by running this in a terminal window:</p>
+<pre><code>pyenv
+</code></pre><p>If it is already installed, either update it using <code>pyenv update</code> or using the package manager that you used to install it.</p>
+<p>If it is not installed you can install it using the following command, pasted into a new terminal window:</p>
 <pre><code>curl https://pyenv.run | bash
 </code></pre><p>The output of the command tells you to add certain lines to your startup files for your terminal sessions. Follow the <a href="https://github.com/pyenv/pyenv/blob/master/README.md#set-up-your-shell-environment-for-pyenv" target="_blank">PyEnv setup instructions</a> copied below - if you are unsure which section to follow, you are probably using a <strong>bash</strong> shell.</p>
 <ul>
@@ -685,8 +714,9 @@ is copyrighted by Markus Zapke-Gründemann et al.</p>
 <p>To create a virtualenv for the Python version used with pyenv, run <code>pyenv virtualenv</code>, specifying the Python version you want and the name of the virtualenv directory. For example, because we can make a virtual environment for Kolibri using Python 3.9.9:</p>
 <pre><code class="lang-sh">$ pyenv virtualenv 3.9.9 djangotutorial-py3.9
 </code></pre>
-<p>will create a virtualenv based on Python 2.7.10 under <code>$(pyenv root)/versions</code> in a
-folder called <code>kolibri-py2.7</code>.</p>
+<p><em>If you get &apos;command not found&apos; or a similar error, and pyenv virtualenv is not installed, <a href="https://github.com/pyenv/pyenv-virtualenv#installation" target="_blank">please follow the installation instructions</a>.</em></p>
+<p>will create a virtualenv based on Python 3.9.9 under <code>$(pyenv root)/versions</code> in a
+folder called <code>kolibri-py3.9</code>.</p>
 <h3 id="list-existing-virtualenvs">List existing virtualenvs</h3>
 <p><code>pyenv virtualenvs</code> shows you the list of existing virtualenvs and <code>conda</code> environments.</p>
 <pre><code class="lang-sh">$ pyenv virtualenvs
@@ -728,14 +758,13 @@ pyenv deactivate
 <p></p><p class="code-label">django-tutorial/requirements.txt</p><p></p>
 <pre><code>Django~=3.2.13
 </code></pre><p>Now, run <code>pip install -r requirements.txt</code> to install Django.</p>
-<p></p><p class="code-label">command-line</p>
-```
-(myvenv) ~$ pip install -r requirements.txt
+<p></p><p class="code-label">command-line</p><p></p>
+<pre><code>(myvenv) ~$ pip install -r requirements.txt
 Collecting Django~=3.2.13 (from -r requirements.txt (line 1))
   Downloading Django-3.2.13-py3-none-any.whl (7.9MB)
 Installing collected packages: Django
-Successfully installed Django-3.2.13<p></p>
-<p>That&apos;s it! You&apos;re now (finally) ready to create a Django application!</p>
+Successfully installed Django-3.2.13
+</code></pre><p>That&apos;s it! You&apos;re now (finally) ready to create a Django application!</p>
 <h1 id="github-account">Create a GitHub account </h1>
 <p>If you do not have a Github account, go to <a href="https://www.github.com" target="_blank">GitHub.com</a> and sign up for a new, free user account. Be sure to remember your password (add it to your password manager, if you use one).</p>
 <h1 id="additional-reading">Additional reading</h1>
@@ -795,7 +824,7 @@ Successfully installed Django-3.2.13<p></p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Installation","level":"1.2","depth":1,"next":{"title":"How the Internet works","level":"1.3","depth":1,"path":"how_the_internet_works/README.md","ref":"how_the_internet_works/README.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"articles":[{"title":"Command Line","level":"1.2.1","depth":2,"anchor":"#command-line","path":"installation/README.md","ref":"installation/README.md#command-line","articles":[]},{"title":"Git","level":"1.2.2","depth":2,"anchor":"#git","path":"installation/README.md","ref":"installation/README.md#git","articles":[]},{"title":"Python","level":"1.2.3","depth":2,"anchor":"#python","path":"installation/README.md","ref":"installation/README.md#python","articles":[]},{"title":"Code Editor","level":"1.2.4","depth":2,"anchor":"#code-editor","path":"installation/README.md","ref":"installation/README.md#code-editor","articles":[]},{"title":"Virtual Environment","level":"1.2.5","depth":2,"anchor":"#virtualenv","path":"installation/README.md","ref":"installation/README.md#virtualenv","articles":[]},{"title":"Django","level":"1.2.6","depth":2,"anchor":"#django","path":"installation/README.md","ref":"installation/README.md#django","articles":[]},{"title":"GitHub","level":"1.2.7","depth":2,"anchor":"#github-account","path":"installation/README.md","ref":"installation/README.md#github-account","articles":[]}],"dir":"ltr"},"config":{"plugins":["heading-anchors@1.0.3","ga@1.0.1","richquotes@0.0.9","github@2.0.0","language-picker","codeblock-label","sectionx-ex","collapsible-menu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"collapsible-menu":{},"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/learningequality/django-tutorial"},"codeblock-label":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sectionx-ex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"default":false},"sectionx":{"tag":"b"},"heading-anchors":{},"highlight":{},"ga":{"configuration":"auto","token":"UA-51680040-3"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"py_version":"3.9","py_release":"3.9.9","py_min_version":"3.6","py_min_release":"3.6.8","pa_py_version":"3.8","django_version":"3.2.13"},"language":"en","gitbook":"*"},"file":{"path":"installation/README.md","mtime":"2022-07-29T21:39:51.826Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-07-29T21:40:07.352Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"Installation","level":"1.2","depth":1,"next":{"title":"How the Internet works","level":"1.3","depth":1,"path":"how_the_internet_works/README.md","ref":"how_the_internet_works/README.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"articles":[{"title":"Command Line","level":"1.2.1","depth":2,"anchor":"#command-line","path":"installation/README.md","ref":"installation/README.md#command-line","articles":[]},{"title":"Git","level":"1.2.2","depth":2,"anchor":"#git","path":"installation/README.md","ref":"installation/README.md#git","articles":[]},{"title":"Python","level":"1.2.3","depth":2,"anchor":"#python","path":"installation/README.md","ref":"installation/README.md#python","articles":[]},{"title":"Code Editor","level":"1.2.4","depth":2,"anchor":"#code-editor","path":"installation/README.md","ref":"installation/README.md#code-editor","articles":[]},{"title":"Virtual Environment","level":"1.2.5","depth":2,"anchor":"#virtualenv","path":"installation/README.md","ref":"installation/README.md#virtualenv","articles":[]},{"title":"Django","level":"1.2.6","depth":2,"anchor":"#django","path":"installation/README.md","ref":"installation/README.md#django","articles":[]},{"title":"GitHub","level":"1.2.7","depth":2,"anchor":"#github-account","path":"installation/README.md","ref":"installation/README.md#github-account","articles":[]}],"dir":"ltr"},"config":{"plugins":["heading-anchors@1.0.3","ga@1.0.1","richquotes@0.0.9","github@2.0.0","language-picker","codeblock-label","sectionx-ex","collapsible-menu"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"collapsible-menu":{},"language-picker":{"grid-columns":3},"github":{"url":"https://github.com/learningequality/django-tutorial"},"codeblock-label":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sectionx-ex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"richquotes":{"default":false},"sectionx":{"tag":"b"},"heading-anchors":{},"highlight":{},"ga":{"configuration":"auto","token":"UA-51680040-3"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"py_version":"3.9","py_release":"3.9.9","py_min_version":"3.6","py_min_release":"3.6.8","pa_py_version":"3.8","django_version":"3.2.13","drf_version":"3.13.1","django_filter_version":"22.1"},"language":"en","gitbook":"*"},"file":{"path":"installation/README.md","mtime":"2022-08-16T16:58:15.556Z","type":"markdown"},"gitbook":{"version":"3.7.5","time":"2022-08-16T16:58:36.596Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
